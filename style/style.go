@@ -1,25 +1,25 @@
 package style
 
 import (
-	"github.com/anotherhadi/purple-apps"
 	"github.com/charmbracelet/lipgloss"
+	"github.com/jasperspahl/calendar/internal/config"
 )
 
 var (
 	TitleStyle = lipgloss.NewStyle().
-			Foreground(purple.Colors.Accent).
+			Foreground(config.GetConfig().Colors.Accent).
 			Align(lipgloss.Center).
 			Bold(true)
-	BorderStyle = lipgloss.NewStyle().Foreground(purple.Colors.Muted)
+	BorderStyle = lipgloss.NewStyle().Foreground(config.GetConfig().Colors.Muted)
 
 	// Cells
 	CellStyle        = lipgloss.NewStyle().Padding(0, 1)
-	CellStyleHover   = lipgloss.NewStyle().Padding(0, 1).Background(purple.Colors.Muted)
-	OutsideCellStyle = CellStyle.Foreground(purple.Colors.Muted)
+	CellStyleHover   = lipgloss.NewStyle().Padding(0, 1).Background(config.GetConfig().Colors.Muted)
+	OutsideCellStyle = CellStyle.Foreground(config.GetConfig().Colors.Muted)
 
 	// Event
-	EventStyle = lipgloss.NewStyle().Foreground(purple.Colors.Muted)
+	EventStyle = lipgloss.NewStyle().Foreground(config.GetConfig().Colors.Muted)
 
 	// Other
-	Notice = lipgloss.NewStyle().Foreground(purple.Colors.Muted).Align(lipgloss.Center)
+	Notice = lipgloss.NewStyle().Foreground(config.GetConfig().Colors.Muted).Align(lipgloss.Center)
 )

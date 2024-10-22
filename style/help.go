@@ -1,17 +1,17 @@
 package style
 
 import (
-	"github.com/anotherhadi/purple-apps"
-	"github.com/charmbracelet/bubbles/v2/help"
+	"github.com/charmbracelet/bubbles/help"
 	"github.com/charmbracelet/lipgloss"
+	"github.com/jasperspahl/calendar/internal/config"
 )
 
 func GetHelpStyles() help.Styles {
-	keyStyle := lipgloss.NewStyle().Foreground(purple.Colors.LightGray)
+	keyStyle := lipgloss.NewStyle().Foreground(config.GetConfig().Colors.LightGray)
 
-	descStyle := lipgloss.NewStyle().Foreground(purple.Colors.Muted)
+	descStyle := lipgloss.NewStyle().Foreground(config.GetConfig().Colors.Muted)
 
-	sepStyle := lipgloss.NewStyle().Foreground(purple.Colors.Muted)
+	sepStyle := lipgloss.NewStyle().Foreground(config.GetConfig().Colors.Muted)
 
 	return help.Styles{
 		ShortKey:       keyStyle,

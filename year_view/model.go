@@ -1,20 +1,23 @@
 package year
 
 import (
-	"github.com/anotherhadi/calendar/style"
 	calendar "github.com/anotherhadi/markdown-calendar"
-	"github.com/charmbracelet/bubbles/v2/help"
+	"github.com/charmbracelet/bubbles/help"
+	"github.com/jasperspahl/calendar/style"
 )
 
 type Model struct {
-	currentDay, currentMonth, currentYear int
-	focusDay, focusMonth, focusYear       *int
-
-	calendar *calendar.Calendar
-
-	keys          keyMap
-	Help          help.Model
-	width, height int
+	Help         help.Model
+	focusDay     *int
+	focusMonth   *int
+	focusYear    *int
+	calendar     *calendar.Calendar
+	keys         keyMap
+	currentDay   int
+	currentMonth int
+	currentYear  int
+	width        int
+	height       int
 }
 
 func NewModel(

@@ -1,10 +1,10 @@
 package year
 
 import (
-	"github.com/anotherhadi/calendar/utils"
 	calendar "github.com/anotherhadi/markdown-calendar"
-	"github.com/charmbracelet/bubbles/v2/key"
-	tea "github.com/charmbracelet/bubbletea/v2"
+	"github.com/charmbracelet/bubbles/key"
+	tea "github.com/charmbracelet/bubbletea"
+	"github.com/jasperspahl/calendar/utils"
 )
 
 func (m Model) Update(message tea.Msg) (Model, tea.Cmd) {

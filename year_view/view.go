@@ -5,11 +5,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/anotherhadi/calendar/style"
-	"github.com/anotherhadi/calendar/utils"
 	calendar "github.com/anotherhadi/markdown-calendar"
 	"github.com/anotherhadi/purple-apps"
 	"github.com/charmbracelet/lipgloss"
+	"github.com/jasperspahl/calendar/style"
+	"github.com/jasperspahl/calendar/utils"
 )
 
 func (m Model) drawMinimalCalendar(month, year int) string {

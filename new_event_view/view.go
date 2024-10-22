@@ -1,7 +1,7 @@
 package newevent
 
 import (
-	"github.com/anotherhadi/calendar/style"
+	"github.com/jasperspahl/calendar/style"
 )
 
 func (m Model) View() string {

@@ -1,9 +1,9 @@
 package year
 
 import (
-	tea "github.com/charmbracelet/bubbletea/v2"
+	tea "github.com/charmbracelet/bubbletea"
 )
 
-func (m Model) Init() (Model, tea.Cmd) {
-	return m, nil
+func (m Model) Init() tea.Cmd {
+	return nil
 }

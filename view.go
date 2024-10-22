@@ -1,9 +1,9 @@
 package main
 
 import (
-	month "github.com/anotherhadi/calendar/month_view"
-	week "github.com/anotherhadi/calendar/week_view"
-	year "github.com/anotherhadi/calendar/year_view"
+	month "github.com/jasperspahl/calendar/month_view"
+	week "github.com/jasperspahl/calendar/week_view"
+	year "github.com/jasperspahl/calendar/year_view"
 )
 
 func (m model) View() string {

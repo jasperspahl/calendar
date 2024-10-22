@@ -1,6 +1,6 @@
 package month
 
-import "github.com/charmbracelet/bubbles/v2/key"
+import "github.com/charmbracelet/bubbles/key"
 
 type keyMap struct {
 	PreviousDay   key.Binding

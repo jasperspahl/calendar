@@ -2,7 +2,7 @@
 
 **/!\ THIS IS AN ALPHA VERSION, WIP**
 
-Calendar is a TUI app to manage your markdown-calendar.
+Calendar is a TUI app to manage your calendars.
 
 ## Features
 
@@ -10,11 +10,22 @@ Calendar is a TUI app to manage your markdown-calendar.
 - [x] Week view
 - [ ] Day view
 - [x] Year view
-- [!] Add events
+- [-] Add events
 - [ ] Edit events
 - [ ] Remove events
 
 ## Todolist
+
+- [ ] Remove purple-apps
+
+- [ ] Create a generic abstraction for Calendars
+  - [ ] Add events
+  - [ ] Edit events
+  - [ ] Remove events
+
+- [ ] markdown-calendars
+- [ ] google calendar
+- [ ] generic caldav
 
 ### Ideas
 

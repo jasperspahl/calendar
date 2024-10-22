@@ -4,8 +4,6 @@ import (
 	"regexp"
 
 	calendar "github.com/anotherhadi/markdown-calendar"
-	oldTea "github.com/charmbracelet/bubbletea"
-	tea "github.com/charmbracelet/bubbletea/v2"
 )
 
 func RemoveAnsiStyle(s string) string {
@@ -28,14 +26,4 @@ func TruncateString(s string, n int) string {
 		return ""
 	}
 	return s[:n-3] + "..."
-}
-
-func WrapOldBubbleteaCmd(oldCmd oldTea.Cmd) (newCmd tea.Cmd) {
-	newCmd = func() tea.Msg {
-		if oldCmd != nil {
-			return oldCmd()
-		}
-		return nil
-	}
-	return newCmd
 }

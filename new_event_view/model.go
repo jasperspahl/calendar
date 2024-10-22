@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/anotherhadi/calendar/style"
 	calendar "github.com/anotherhadi/markdown-calendar"
 	"github.com/charmbracelet/huh"
+	"github.com/jasperspahl/calendar/style"
 )
 
 type Model struct {

@@ -1,11 +1,14 @@
 package newevent
 
 import (
-	"github.com/anotherhadi/calendar/utils"
-	oldTea "github.com/charmbracelet/bubbletea"
-	tea "github.com/charmbracelet/bubbletea/v2"
+	"strconv"
+	"strings"
 
+	calendar "github.com/anotherhadi/markdown-calendar"
+	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/huh"
+
+	"github.com/jasperspahl/calendar/utils"
 )
 
 func (m Model) Update(message tea.Msg) (Model, tea.Cmd) {
@@ -22,28 +25,22 @@ func (m Model) Update(message tea.Msg) (Model, tea.Cmd) {
 		}
 	}
 
-	var cmd oldTea.Cmd
 	form, cmd := m.form.Update(message)
 	if f, ok := form.(*huh.Form); ok {
 		m.form = f
 	}
 
-	// if m.form.State == huh.StateCompleted {
-	// 	m.Event.Name = m.form.GetString("name")
-	// 	m.Event.Description = m.form.GetString("description")
-	// 	m.Event.StartDate.Day, _ = strconv.Atoi(strings.Split(m.form.GetString("date"), "/")[0])
-	// 	m.Event.StartDate.Month, _ = strconv.Atoi(strings.Split(m.form.GetString("date"), "/")[1])
-	// 	m.Event.StartDate.Year, _ = strconv.Atoi(strings.Split(m.form.GetString("date"), "/")[2])
-	// 	for i := range m.calendars {
-	// 		if m.calendars[i].Name == *m.CalendarName {
-	// 			m.calendars[i].AddEvent(*m.Event)
-	// 			_ = m.calendars[i].Write()
-	// 			*m.isViewed = false
-	// 			return m, nil
-	// 		}
-	// 	}
-	// return m, utils.ChangeFocusViewCmd(m.previousView)
-	// }
+	if m.form.State == huh.StateCompleted {
+		event := calendar.Event{}
+		event.Name = m.form.GetString("name")
+		event.Description = m.form.GetString("description")
+		event.StartDate.Day, _ = strconv.Atoi(strings.Split(m.form.GetString("date"), "/")[0])
+		event.StartDate.Month, _ = strconv.Atoi(strings.Split(m.form.GetString("date"), "/")[1])
+		event.StartDate.Year, _ = strconv.Atoi(strings.Split(m.form.GetString("date"), "/")[2])
+		m.calendars.AddEvent(event)
+		_ = m.calendars.Write()
+		return m, utils.ChangeFocusViewCmd(m.previousView)
+	}
 
-	return m, utils.WrapOldBubbleteaCmd(cmd)
+	return m, cmd
 }

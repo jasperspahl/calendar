@@ -1,9 +1,9 @@
 package main
 
 import (
-	newevent "github.com/anotherhadi/calendar/new_event_view"
-	"github.com/anotherhadi/calendar/utils"
-	tea "github.com/charmbracelet/bubbletea/v2"
+	tea "github.com/charmbracelet/bubbletea"
+	newevent "github.com/jasperspahl/calendar/new_event_view"
+	"github.com/jasperspahl/calendar/utils"
 )
 
 func (m model) UpdateSize(msg tea.WindowSizeMsg) (model, tea.Cmd) {
@@ -43,8 +43,7 @@ func (m model) Update(message tea.Msg) (tea.Model, tea.Cmd) {
 				utils.RemoveAnsiStyle(m.View()),
 				m.CurrentView)
 			m.CurrentView = msg.View
-			var cmd tea.Cmd
-			m.NewEventModel, cmd = m.NewEventModel.Init()
+			cmd := m.NewEventModel.Init()
 			return m, cmd
 		}
 		m.CurrentView = msg.View

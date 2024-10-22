@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	tea "github.com/charmbracelet/bubbletea/v2"
+	tea "github.com/charmbracelet/bubbletea"
 )
 
 func main() {
@@ -18,6 +18,6 @@ func main() {
 	}
 }
 
-func (m model) Init() (tea.Model, tea.Cmd) {
-	return m, nil
+func (m model) Init() tea.Cmd {
+	return nil
 }

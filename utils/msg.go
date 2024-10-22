@@ -1,6 +1,6 @@
 package utils
 
-import tea "github.com/charmbracelet/bubbletea/v2"
+import tea "github.com/charmbracelet/bubbletea"
 
 type ChangeFocusViewMsg struct {
 	View string
